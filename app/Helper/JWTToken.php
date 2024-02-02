@@ -29,7 +29,7 @@ class JWTToken
                 return 'unauthorized';
             } else {
                 $key = env('JWT_KEY');
-                JWT::decode($token, new Key($key, 'HS256'));
+                return JWT::decode($token, new Key($key, 'HS256'));
             }
         } catch (\Exception $e) {
             return 'unauthorized';
