@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\ProductController;
@@ -68,4 +69,9 @@ Route::middleware(['custom.auth'])->group(function () {
     Route::get('/wishlist', [WishlistConstroller::class, 'index'])->name('wishlist.index');
     Route::post('/wishlist', [WishlistConstroller::class, 'store'])->name('wishlist.store');
     Route::post('/wishlist-delete', [WishlistConstroller::class, 'destroy'])->name('wishlist.destroy');
+
+    //Cart
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+    Route::post('/cart-delete', [CartController::class, 'destroy'])->name('cart.destroy');
 });
