@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class SSLCommerzeAccount extends Model
 {
     use HasFactory;
+
+    protected $table = 'sslcommerz_accounts';
 }
